@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Browse for pets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/84f80d421d.js" crossorigin="anonymous"></script>
+    <style>
+        .sora {
+            font-family: "Sora", serif;
+        }
+
+        .font-2 {
+            font-family: "ADLaM Display", serif;
+        }
+    </style>
 
 </head>
-<body>
-    
+
+<body class="sora">
+    <header>
+        <nav class="bg-[#FFF9F4] border-[#111111] border-[0.5px] sm:border-none">
+            <div class="navbar text-[#111111] text-xl ">
+                <div class="navbar-start gap-2 pt-3 pb-3 lg:ml-[140px] sm:ml-[16px] ">
+                    <img class=" block " src="c1-assets/logo-header.png" alt="">
+                    <h1 class="hidden sm:block text-3xl">Browse<span class="text-[#FFDC26]">4</span>pets</h1>
+                </div>
+
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 mx-auto">
+                        <li><a>Find a pet</a></li>
+                        <li><a>Breeds</a></li>
+                        <li><a>Contact us</a></li>
+                    </ul>
+                </div>
+                <div class=" navbar-end lg:me-[140px] gap-4  hidden sm:flex">
+
+                    <a href="#"><img src="c1-assets/icons/bell (1) 1.png" alt=""></a>
+                    <a href="#"><img src="c1-assets/icons/Vector.png" alt=""></a>
+                    <button
+                        class="btn btn-ghost rounded-lg border-[#FFDC26] pt-2 pb-2 pl-6 pr-6 font-normal">Login</button>
+                    <button class="btn bg-[#FFDC26] pt-2 pb-2 pl-6 pr-6 rounded-lg font-normal">Register</button>
+                </div>
+                <div class=" navbar-end me-[16px] lg:hidden">
+                    <button id="menu-toggle" class="focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+
+
+                </div>
+
+        </nav>
+        <!-- banner section -->
+        <section class="mt-[30px] ml-[16px] me-[16px] lg:ml-[140px] lg:me-[140px] lg:mt-[76px]">
+            <div class="flex flex-col">
+                <!-- text -->
+                <div class=" lg:absolute">
+                    <h1 class="font-2 mb-3 text-black text-[30px]  lg:text-[56px]">Pamper Your Pet,<br> Because They Deserve <br> the Bes</h1> 
+                    <p class="  text-[16px] font-normal mb-3 lg:text-[20px]">Discover a world of treats, toys, and <br class="sm:hidden"> essentials <br class="lg:block hidden"> handpicked for your furry <br class="sm:hidden"> friends. Shop now and
+                     make tails wag with <br class="sm:hidden">joy!</p>
+                    <button class="btn bg-[#FFDC26] pt-2 pb-2 pl-6 pr-6 rounded-lg font-normal">Find a pet</button>
+                </div>
+              
+                <!-- image -->
+                <div class="lg:mt-40" >
+                    <img src="c1-assets/cat-big-2.png" alt=""> 
+                   </div>
+            </div>
+        </section>
+    </header>
 </body>
+
 </html>
