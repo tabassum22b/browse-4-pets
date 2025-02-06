@@ -4,8 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse for pets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/84f80d421d.js" crossorigin="anonymous"></script>
+    <style>
+      .sora {
+        font-family: "Sora", serif;
+      }
+      .font-2 {
+        font-family: "ADLaM Display", serif;
+      }
+      /* Slide-in Animation for the Heading */
+      @keyframes slideInLeft {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      .animate-slide-in {
+        animation: slideInLeft 1s ease-out forwards;
+      }
+      /* Pulse Animation for the Banner Button */
+      @keyframes pulseButton {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      .animate-button {
+        animation: pulseButton 2s infinite;
+      }
+    </style>
+    <script>
+      module.exports = {
+        theme: {
+          extend: {
+            screens: {
+              xxl: "1600px",
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
 </head>
 <body>
+    <header>
+
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        
+    </footer>
     
 </body>
 </html>
