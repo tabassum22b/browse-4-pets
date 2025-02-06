@@ -1,125 +1,233 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse for pets</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Sora:wght@100..800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/84f80d421d.js" crossorigin="anonymous"></script>
-    <style>
-      .sora {
-        font-family: "Sora", serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Browse for pets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Sora:wght@100..800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/84f80d421d.js" crossorigin="anonymous"></script>
+  <style>
+    .sora {
+      font-family: "Sora", serif;
+    }
+
+    .font-2 {
+      font-family: "ADLaM Display", serif;
+    }
+
+    /* Slide-in Animation for the Heading */
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
       }
-      .font-2 {
-        font-family: "ADLaM Display", serif;
+      100% {
+        transform: translateX(0);
+        opacity: 1;
       }
-      /* Slide-in Animation for the Heading */
-      @keyframes slideInLeft {
-        0% {
-          transform: translateX(-100%);
-          opacity: 0;
-        }
-        100% {
-          transform: translateX(0);
-          opacity: 1;
-        }
+    }
+    .animate-slide-in {
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    /* Pulse Animation for the Banner Button */
+    @keyframes pulseButton {
+      0%, 100% {
+        transform: scale(1);
       }
-      .animate-slide-in {
-        animation: slideInLeft 1s ease-out forwards;
+      50% {
+        transform: scale(1.05);
       }
-      /* Pulse Animation for the Banner Button */
-      @keyframes pulseButton {
-        0%, 100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
+    }
+    .animate-button {
+      animation: pulseButton 2s infinite;
+    }
+
+    /* Slide-up Animation for the new section cards */
+    @keyframes slideUp {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
       }
-      .animate-button {
-        animation: pulseButton 2s infinite;
+      100% {
+        transform: translateY(0);
+        opacity: 1;
       }
-    </style>
-    <script>
-      module.exports = {
-        theme: {
-          extend: {
-            screens: {
-              xxl: "1600px",
-            },
+    }
+    .animate-slide-up {
+      animation: slideUp 1s ease-out forwards;
+    }
+  </style>
+  <script>
+    module.exports = {
+      theme: {
+        extend: {
+          screens: {
+            xxl: "1600px",
           },
         },
-        plugins: [],
-      };
-    </script>
+      },
+      plugins: [],
+    };
+  </script>
 </head>
-<body class="sora overflow-x-hidden">
 
-  <header class="mb-6 lg:mb-[170px]">
-    <nav class="bg-[#FFF9F4] border-[#111111] border-[0.5px] sm:border-none">
-      <div class="navbar text-[#111111] text-xl container mx-auto px-4">
-        <div class="navbar-start gap-2 pt-3 pb-3">
-          <img class="block" src="c1-assets/logo-header.png" alt="">
-          <h1 class="hidden sm:block text-3xl">Browse<span class="text-[#FFDC26]">4</span>Pets</h1>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 mx-auto">
-            <li><a>Find a pet</a></li>
-            <li><a>Breeds</a></li>
-            <li><a>Contact us</a></li>
-          </ul>
-        </div>
-        <div class="navbar-end lg:mr-10 gap-4 hidden sm:flex">
-          <a href="#"><img src="c1-assets/icons/bell (1) 1.png" alt=""></a>
-          <a href="#"><img src="c1-assets/icons/Vector.png" alt=""></a>
-          <button class="btn btn-ghost rounded-lg border-[#FFDC26] pt-2 pb-2 pl-6 pr-6 font-normal">Login</button>
-          <button class="btn bg-[#FFDC26] pt-2 pb-2 pl-6 pr-6 rounded-lg font-normal">Register</button>
-        </div>
-        <div class="navbar-end mr-4 lg:hidden">
-          <button id="menu-toggle" class="focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
-        </div>
+<header class="mb-6 lg:mb-[170px]">
+  <nav class="bg-[#FFF9F4] border-[#111111] border-[0.5px] sm:border-none">
+    <div class="navbar text-[#111111] text-xl ">
+      <div class="navbar-start gap-2 pt-3 pb-3 lg:ml-[140px] sm:ml-[16px] ">
+        <img class="block" src="c1-assets/logo-header.png" alt="">
+        <h1 class="hidden sm:block text-3xl">Browse<span class="text-[#FFDC26]">4</span>pets</h1>
       </div>
-    </nav>
-    <!-- Banner Section -->
-    <section class="mt-8 container mx-auto px-4 lg:mt-[76px]">
-      <div class="flex flex-col">
-        <!--  heading animation -->
-        <div class="lg:absolute">
-          <h1 class="font-2 mb-3 text-black text-[30px] lg:text-[56px] animate-slide-in">
-            Pamper Your Pet,<br> Because They Deserve <br> the Bes
-          </h1>
-          <p class="text-[16px] font-normal mb-3 lg:text-[20px]">
-            Discover a world of treats, toys, and <br class="sm:hidden"> essentials <br class="lg:block hidden">
-            handpicked for your furry <br class="sm:hidden"> friends. Shop now and make tails wag with <br class="sm:hidden">joy!
-          </p>
-          <!-- Button animation -->
-          <button class="btn bg-[#FFDC26] pt-2 pb-2 pl-6 pr-6 rounded-lg font-normal animate-button">
-            Find a pet
-          </button>
+
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 mx-auto">
+          <li><a>Find a pet</a></li>
+          <li><a>Breeds</a></li>
+          <li><a>Contact us</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end lg:me-[140px] gap-4 hidden sm:flex">
+        <a href="#"><img src="c1-assets/icons/bell (1) 1.png" alt=""></a>
+        <a href="#"><img src="c1-assets/icons/Vector.png" alt=""></a>
+        <button class="btn btn-ghost rounded-lg border-[#FFDC26] pt-2 pb-2 pl-6 pr-6 font-normal">Login</button>
+        <button class="btn bg-[#FFDC26] pt-2 pb-2 pl-6 pr-6 rounded-lg font-normal">Register</button>
+      </div>
+      <div class="navbar-end me-[16px] lg:hidden">
+        <button id="menu-toggle" class="focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+  </nav>
+  <!-- banner section -->
+  <section class="mt-[30px] ml-[16px] me-[16px] lg:ml-[140px] lg:me-[140px] lg:mt-[76px]">
+    <div class="flex flex-col">
+      <!--  heading animation -->
+      <div class="lg:absolute">
+        <h1 class="font-2 mb-3 text-black text-[30px] lg:text-[56px] animate-slide-in">
+          Pamper Your Pet,<br> Because They Deserve <br> the Bes
+        </h1>
+        <p class="text-[16px] font-normal mb-3 lg:text-[20px]">
+          Discover a world of treats, toys, and <br class="sm:hidden"> essentials <br class="lg:block hidden">
+          handpicked for your furry <br class="sm:hidden"> friends. Shop now and
+          make tails wag with <br class="sm:hidden">joy!
+        </p>
+    
+        <button class="btn bg-[#FFDC26] pt-2 pb-2 pl-6 pr-6 rounded-lg font-normal animate-button">
+          Find a pet
+        </button>
+      </div> 
+      
+      <!-- image -->
+      <div class="lg:mt-48">
+        <img src="c1-assets/cat-big-2.png" alt="">
+      </div>
+    </div>
+  </section>
+</header>
+<body class="sora">
+  <main>
+    <!-- section catagory -->
+    <section class="ml-[16px] mr-[16px] mb-12 lg:ml-[140px] lg:mr-[140px] lg:mb-[120px]">
+      <h1 class="font-2 font-normal text-[24px] mb-3 lg:text-[36px] lg:mb-8">Browse By Categories</h1>
+      <div class="flex flex-wrap gap-4">
+        <!-- Card 1 -->
+        <div class="w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(16.66%-16px)]">
+          <div class="bg-[#F9DF8A] rounded-xl p-6 shadow-md h-56">
+            <div class="flex justify-center mb-24">
+              <div class="rounded-full bg-white p-3 absolute">
+                <span><img src="c1-assets/dog-cartoon.png" alt=""></span>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="font-bold lg:text-xl">Dog</h3>
+              <p class="lg:text-base">3 items</p>
+            </div>
+          </div>
         </div>
-        <!-- Banner Image -->
-        <div class="lg:mt-48">
-          <img src="c1-assets/cat-big-2.png" alt="">
+        <!-- Card 2 -->
+        <div class="w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(16.66%-16px)]">
+          <div class="bg-[#F9DF8A] rounded-xl p-6 shadow-md h-56">
+            <div class="flex justify-center mb-24">
+              <div class="rounded-full bg-white p-3 absolute">
+                <span><img src="c1-assets/fish-cartoon.png" alt=""></span>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="font-bold lg:text-xl">Fish</h3>
+              <p class="lg:text-base">3 items</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(16.66%-16px)]">
+          <div class="bg-[#F9DF8A] rounded-xl p-6 shadow-md h-56">
+            <div class="flex justify-center mb-24">
+              <div class="rounded-full bg-white p-3 absolute">
+                <span><img src="c1-assets/cat-cartoon.png" alt=""></span>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="font-bold lg:text-xl">Cat</h3>
+              <p class="lg:text-base">3 items</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(16.66%-16px)]">
+          <div class="bg-[#F9DF8A] rounded-xl p-6 shadow-md h-56">
+            <div class="flex justify-center mb-24">
+              <div class="rounded-full bg-white p-3 absolute">
+                <span><img src="c1-assets/bird-cartoon.png" alt=""></span>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="font-bold lg:text-xl">Birds</h3>
+              <p class="lg:text-base">3 items</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(16.66%-16px)]">
+          <div class="bg-[#F9DF8A] rounded-xl p-6 shadow-md h-56">
+            <div class="flex justify-center mb-24">
+              <div class="rounded-full bg-white p-3 absolute">
+                <span><img src="c1-assets/mouse-cartoon.png" alt=""></span>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="font-bold lg:text-xl">Small pet</h3>
+              <p class="lg:text-base">3 items</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="w-[calc(50%-8px)] md:w-[calc(33.33%-11px)] lg:w-[calc(16.66%-16px)]">
+          <div class="bg-[#F9DF8A] rounded-xl p-6 shadow-md h-56">
+            <div class="flex justify-center mb-24">
+              <div class="rounded-full bg-white p-3 absolute">
+                <span><img src="c1-assets/rabbit-cartoon.png" alt=""></span>
+              </div>
+            </div>
+            <div class="text-center">
+              <h3 class="font-bold lg:text-xl">Rabit</h3>
+              <p class="lg:text-base">2 items</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  </header>
-
-   
-    <main>
-
-    </main>
-    <footer>
-        
-    </footer>
-    
+  </main>
 </body>
+
 </html>
