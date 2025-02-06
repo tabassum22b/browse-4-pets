@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,10 +57,63 @@
       };
     </script>
 </head>
-<body>
-    <header>
+<body class="sora overflow-x-hidden">
 
-    </header>
+  <header class="mb-6 lg:mb-[170px]">
+    <nav class="bg-[#FFF9F4] border-[#111111] border-[0.5px] sm:border-none">
+      <div class="navbar text-[#111111] text-xl container mx-auto px-4">
+        <div class="navbar-start gap-2 pt-3 pb-3">
+          <img class="block" src="c1-assets/logo-header.png" alt="">
+          <h1 class="hidden sm:block text-3xl">Browse<span class="text-[#FFDC26]">4</span>Pets</h1>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 mx-auto">
+            <li><a>Find a pet</a></li>
+            <li><a>Breeds</a></li>
+            <li><a>Contact us</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end lg:mr-10 gap-4 hidden sm:flex">
+          <a href="#"><img src="c1-assets/icons/bell (1) 1.png" alt=""></a>
+          <a href="#"><img src="c1-assets/icons/Vector.png" alt=""></a>
+          <button class="btn btn-ghost rounded-lg border-[#FFDC26] pt-2 pb-2 pl-6 pr-6 font-normal">Login</button>
+          <button class="btn bg-[#FFDC26] pt-2 pb-2 pl-6 pr-6 rounded-lg font-normal">Register</button>
+        </div>
+        <div class="navbar-end mr-4 lg:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Banner Section -->
+    <section class="mt-8 container mx-auto px-4 lg:mt-[76px]">
+      <div class="flex flex-col">
+        <!--  heading animation -->
+        <div class="lg:absolute">
+          <h1 class="font-2 mb-3 text-black text-[30px] lg:text-[56px] animate-slide-in">
+            Pamper Your Pet,<br> Because They Deserve <br> the Bes
+          </h1>
+          <p class="text-[16px] font-normal mb-3 lg:text-[20px]">
+            Discover a world of treats, toys, and <br class="sm:hidden"> essentials <br class="lg:block hidden">
+            handpicked for your furry <br class="sm:hidden"> friends. Shop now and make tails wag with <br class="sm:hidden">joy!
+          </p>
+          <!-- Button animation -->
+          <button class="btn bg-[#FFDC26] pt-2 pb-2 pl-6 pr-6 rounded-lg font-normal animate-button">
+            Find a pet
+          </button>
+        </div>
+        <!-- Banner Image -->
+        <div class="lg:mt-48">
+          <img src="c1-assets/cat-big-2.png" alt="">
+        </div>
+      </div>
+    </section>
+  </header>
+
+   
     <main>
 
     </main>
